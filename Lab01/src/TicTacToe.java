@@ -19,8 +19,11 @@ public class TicTacToe
                 {" ", "|", " ", "|", " "},
         };
         printBoard(GameBoard);
+        // getting player#1 input
+        // test whether player#1 win
+        // getting player#2 input
+        // test whether player#2 win
 
-        
 
 
         // TicTacToe game = new TicTacToe();    // instantiate new TicTacToe object
