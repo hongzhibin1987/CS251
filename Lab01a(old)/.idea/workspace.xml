@@ -20,12 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a090b260-f554-45f4-8da5-8851cbfc6b69" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab01(new)/src/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Holtschulte_Neal_CSCI_2251_83046.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TicTacToe/TicTacToe$gameStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TicTacToe/TicTacToe$gameStatus.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TicTacToe/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TicTacToe/TicTacToe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TicTacToe/TicTacToeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Syllabus.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +53,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration name="TicTacToe" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TicTacToe" />
+    <configuration name="TicTacToeTest" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TicTacToeTest" />
       <module name="TicTacToe" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,37 +93,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="733" y="438" key="#Project_Structure" timestamp="1591065370884">
+    <state x="1374" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610686687946">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="733" y="438" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1591065370884" />
-    <state x="707" y="518" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591160552628">
+    <state x="1374" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1610686687946" />
+    <state width="1234" height="428" key="GridCell.Tab.0.bottom" timestamp="1610696558942">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="707" y="518" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591160552628" />
-    <state x="982" y="653" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591160381234">
+    <state width="1234" height="428" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1610696558942" />
+    <state width="1234" height="428" key="GridCell.Tab.0.center" timestamp="1610696558942">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="982" y="653" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591160381234" />
-    <state width="2517" height="283" key="GridCell.Tab.0.bottom" timestamp="1591162233106">
+    <state width="1234" height="428" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1610696558942" />
+    <state width="1234" height="428" key="GridCell.Tab.0.left" timestamp="1610696558942">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="283" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591162233106" />
-    <state width="2517" height="283" key="GridCell.Tab.0.center" timestamp="1591162233106">
+    <state width="1234" height="428" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1610696558942" />
+    <state width="1234" height="428" key="GridCell.Tab.0.right" timestamp="1610696558942">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="283" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591162233106" />
-    <state width="2517" height="283" key="GridCell.Tab.0.left" timestamp="1591162233106">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="283" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591162233106" />
-    <state width="2517" height="283" key="GridCell.Tab.0.right" timestamp="1591162233106">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="283" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591162233106" />
-    <state x="469" y="381" width="672" height="678" key="search.everywhere.popup" timestamp="1591115142688">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="469" y="381" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1591115142688" />
+    <state width="1234" height="428" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1610696558942" />
   </component>
 </project>

@@ -1,0 +1,141 @@
+Zhibin "Bing" Hong
+zhong@cnm.edu
+Lab01 Basic Design Document
+1/14/2021
+
+Problem Description
+1) initiate a board
+    ----------
+    |  |  |  |
+    ----------
+    |  |  |  |
+    ----------
+    |  |  |  |
+    ----------
+2) initiate two players (o and x)
+3) create an array (has to link to the board, how?)
+    one solution is: board is just for print purpose.
+    ----------
+    |[]|[]|[]|
+    ----------
+    |[]|[]|[]|
+    ----------
+    |[]|[]|[]|
+    ----------
+3*3 array.
+[][][]
+[][][]
+[][][]
+position is
+[0,0][0,1][0,2]
+[1,0][1,1][1,2]
+[1,1][1,2][2,2]
+then these o and x to replace the array elements.
+winning: row, col and dia (diagnose)
+
+Major Program Components (Classes, Objects, and Methods)
+Class-tictactoeteset;
+Object-tictactoe
+Methods:
+    Constructor: construct the board for the game; initialize the instance variables
+    Method play(): loop until the game is over
+    Method printStatus(): prompt for the
+        1) turn of the player
+        2) winner, or draw
+    Method gameStatus(): return the status of the game after a move
+        1) WIN
+        2) DRAW
+        3) CONTINUE;
+    Method printBoard(): Output the 3-by-3 grid board on the screen
+    Method validMove(): validate the intended move by the player.
+
+UML Diagram
+only two: tictactoetest, and tictactoe.
+
+Tictactoe
+-
+
+tictactoetest
+-player: String
++gameStatus()
+
+
+Control Flow (Flow Chart)
+https://lucid.app/lucidchart/invitations/accept/0f233c0c-b0d3-4a81-99a8-1825e1f76b8a
+
+User Execution
+
+**communications**
+This is a great start and I'm glad you're getting a head start thinking about this. I will try to address many of your questions. Lines starting with > are where I'm quoting your email. My response follows.
+
+>i assume there is not too much I can do right? This is a loop while main logic is in tictactoe. This part only needs to initiate printboard and then loop until we reached one of the status;
+TictactoeTest is going to do even less than this. The main loop is going to be in Tictactoe's play method.
+The example of TictactoeTest that is posted with the lab on Brightspace is actually pretty much complete already.
+
+I think you're overcomplicating some of this:
+
+> -move: string
+What is the purpose of a move variable? The board should store the previous moves and the next move can consist of an int row, an int column, and whose turn it is (so we know if it's an X or an O).
+
+> <<constructor>>Tictactoe(player: String, move, string)]
+Why pass these values through the constructor? Seems unnecessary to me.
+
+> +set(setplayer: String)
+> +get(getplayer: string)
+> +setmove:(string)
+> +getmove: (string)
+I emphasized setters and getters a lot in class, but this tictactoe game is going to be very self-contained. These will not be needed.
+
+One important variable that's missing is the board itself. It needs to be a 3x3 array and we will make it a 3x3 enum. This might make more sense after I demo enum.
+
+> IMO the tictactoe class only has two major functions:
+Your two functions sound good, but each one has sub-parts that should be their own separate functions, such as checking if there is a win and validating the move. I highly recommend making at least as many functions as recommended in the project instructions:
+•	Method play(): loop until the game is over
+•	Method printStatus(): prompt for the turn of the player, winner, or draw
+•	Method gameStatus(): return the status of the game after a move, WIN, DRAW, COUTINUE
+•	Method printBoard(): Output the 3-by-3 grid board on the screen
+•	Method validMove(): validate the intended move by the player.
+
+
+
+From: HONG, ZHIBIN <zhong@cnm.edu>
+Sent: Thursday, January 14, 2021 6:54 PM
+To: HOLTSCHULTE, NEAL <nholtschulte@cnm.edu>
+Subject: CSCI2251: need some help with UML
+
+Hi Neal,
+Thanks for reading this email.
+Trying to visualize the whole procedure and need your help.
+For lab01, I’m working on the basic design doc. While I’m finalizing it, here are some questions need to make sure I’m on the right track so I’m not GIGO.
+1.	UML
+tictactoetest
+i assume there is not too much I can do right? This is a loop while main logic is in tictactoe. This part only needs to initiate printboard and then loop until we reached one of the status;
+
+Tictactoe
+-player: string
+-move: string
+<<constructor>>Tictactoe(player: String, move, string)]
+Now I’m getting bit confused on the operation
++set(setplayer: String)
++get(getplayer: string)
++setmove:(string)
++getmove: (string)
+
+IMO the tictactoe class only has two major functions:
+1.	Player’s move (o or x)
+2.	After the move, the board (array) with items being replaced by o/x
+We use other methods to determine the following:
+2.	In a 3*3 grid, there can be 9 moves so the counter should be capped at 9;
+3.	Winning condition: to test whether whether o or x reaches the folloing winning condition
+a.	Row
+b.	Col
+c.	Diagnol
+
+Please let me know, thanks!
+
+
+
+Sent from Mail for Windows 10
+
+
+
