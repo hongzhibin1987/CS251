@@ -12,10 +12,18 @@ public class TicTacToeTest
    public static void main(String[] args) {
       Scanner userInput = new Scanner(System.in);
 
+      String playerO = "Player O";
+      String playerX = "Player X";
 
+      TicTacToe game = new TicTacToe(playerO, playerX);
 
-      //TicTacToe game = new TicTacToe();    // instantiate new TicTacToe object
-      //game.printBoard();                   // Print the game board on the screen
-      //game.play();                         // Play the game
+      game.printBoard();
+
+      while (game.moveCounter < 9) {
+         game.play();
+         game.printBoard();
+         game.checkWinner();
+      }
+      TicTacToe.gameStatus win = game.printWinner();
    } 
 } // end class TicTacToeTest
