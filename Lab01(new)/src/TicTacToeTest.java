@@ -16,14 +16,40 @@ public class TicTacToeTest
       String playerX = "Player X";
 
       TicTacToe game = new TicTacToe(playerO, playerX);
-
-      game.printBoard();
-
-      while (game.moveCounter < 9) {
-         game.play();
+      int row, col;
+      while (game.moveCounter <9){
          game.printBoard();
-         game.checkWinner();
+         System.out.print(game.getPlayer() + "'s" + " turn. \n");
+         System.out.println(game.getPlayer() + ", Enter row(0, 1, or 2):");
+         row = userInput.nextInt();
+         System.out.println(game.getPlayer() + ", Enter col(0, 1, or 2):");
+         col = userInput.nextInt();
+
+         while (game.validMove(row, col) == false) {
+            System.out.println("Enter invalid. Please reenter your choice");
+            System.out.print(game.getPlayer() + "'s" + " turn. \n");
+            System.out.println(game.getPlayer() + ", Enter row(0, 1, or 2):");
+            row = userInput.nextInt();
+            System.out.println(game.getPlayer() + ", Enter col(0, 1, or 2):");
+            col = userInput.nextInt();
+         }
+         game.setMove(row, col);
+         game.swapMove();
+
+         TicTacToe.gameStatus win = game.getStatus();
+         if (win == TicTacToe.gameStatus.DRAW) {
+            System.out.println("This is a draw");
+         }
+         else {
+            game.printWinner();
+         }
       }
-      TicTacToe.gameStatus win = game.printWinner();
-   } 
-} // end class TicTacToeTest
+      }
+
+
+
+
+      //TicTacToe.gameStatus win = game.getWinner();
+      }
+
+// end class TicTacToeTest
