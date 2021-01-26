@@ -7,8 +7,7 @@
 // Author: Zhibin "Bing" Hong
 // 01/14/2021
 import java.util.Scanner;
-public class TicTacToeTest
-{
+public class TicTacToeTest {
    public static void main(String[] args) {
       Scanner userInput = new Scanner(System.in);
 
@@ -16,40 +15,35 @@ public class TicTacToeTest
       String playerX = "Player X";
 
       TicTacToe game = new TicTacToe(playerO, playerX);
-      int row, col;
-      while (game.moveCounter <9){
-         game.printBoard();
-         System.out.print(game.getPlayer() + "'s" + " turn. \n");
-         System.out.println(game.getPlayer() + ", Enter row(0, 1, or 2):");
-         row = userInput.nextInt();
-         System.out.println(game.getPlayer() + ", Enter col(0, 1, or 2):");
-         col = userInput.nextInt();
-
-         while (game.validMove(row, col) == false) {
-            System.out.println("Enter invalid. Please reenter your choice");
+      while (game.getStatus() == TicTacToe.gameStatus.CONTINUE){
+         int row, col;
+         TicTacToe.gameStatus determineStatus = game.getStatus();
+         boolean done = false;
+         do {
+            game.printBoard();
             System.out.print(game.getPlayer() + "'s" + " turn. \n");
             System.out.println(game.getPlayer() + ", Enter row(0, 1, or 2):");
             row = userInput.nextInt();
             System.out.println(game.getPlayer() + ", Enter col(0, 1, or 2):");
             col = userInput.nextInt();
+
+            if (!game.validMove(row, col)) {
+               System.out.println("Enter invalid. Please reenter your choice");
+               }
+            else {
+               done = true;
+            }
          }
+         while (!done);
          game.setMove(row, col);
          game.swapMove();
-
-         TicTacToe.gameStatus win = game.getStatus();
-         if (win == TicTacToe.gameStatus.DRAW) {
-            System.out.println("This is a draw");
-         }
-         else {
+      }
+      game.printBoard();
+      TicTacToe.gameStatus win = game.getStatus();
+      if (win == TicTacToe.gameStatus.DRAW)
+         System.out.println("This game is a Draw!");
+         else{
             game.printWinner();
-         }
       }
-      }
-
-
-
-
-      //TicTacToe.gameStatus win = game.getWinner();
-      }
-
-// end class TicTacToeTest
+   }
+}
