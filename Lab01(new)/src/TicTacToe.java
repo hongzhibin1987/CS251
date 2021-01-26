@@ -1,9 +1,10 @@
 public class TicTacToe {
-
+    // create enum cell
     public enum Cell {
         O, X, EMPTY
     }
 
+    // create enum winning status
     public enum gameStatus {
         WIN, DRAW, CONTINUE
     }
@@ -16,7 +17,7 @@ public class TicTacToe {
 
     int moveCounter;
 
-    // instantiate with playerO and playerX
+    // main method, need pass two strings
     public TicTacToe(String playerO, String playerX) {
         board = new Cell[3][3];
         for (int i = 0; i < 3; i++)
@@ -52,6 +53,7 @@ public class TicTacToe {
             return ' ';
     }
 
+    // determine who is going to make next move. since move is going to swap, player is going to swap.
     public String getPlayer() {
         if (move == Cell.X) {
             return player[0];
@@ -60,6 +62,7 @@ public class TicTacToe {
         }
     }
 
+    // logic of determine whether player's move is valid. 1) has to be within certain range, 2) has to be empty.
     public boolean validMove(int row, int col) {
         if ((row < 0) || (col < 0) || (row > 2) || (col > 2) || (board[row][col] != Cell.EMPTY))
             return false;
@@ -67,6 +70,7 @@ public class TicTacToe {
             return true;
     }
 
+    // if move is valie, turn the board[][] into move.
     public boolean setMove(int row, int col) {
         if (validMove(row, col)) {
             board[row][col] = move;
@@ -75,6 +79,7 @@ public class TicTacToe {
             return false;
     }
 
+    // swap the player/move
     public void swapMove() {
         if (move == Cell.X)
             move = Cell.O;
@@ -83,6 +88,7 @@ public class TicTacToe {
         moveCounter++;
     }
 
+    // main logic to decide the game status. win? lose? or draw.
     public gameStatus getStatus() {
         for (int i = 0; i < 3; i++) {
             if (((board[i][0] == board[i][1] && board[i][1] == board[i][2]) && board[i][0] != Cell.EMPTY) ||
@@ -97,6 +103,7 @@ public class TicTacToe {
             return gameStatus.CONTINUE;
     }
 
+    // if there is a winner, decide who is the winner. <- this method can be optimized, otherwise it's kind stupid :/
     public void printWinner() {
         for (int i = 0; i < 3; i++) {
             if (((board[i][0] == board[i][1] && board[i][1] == board[i][2]) && board[i][0] != Cell.EMPTY) & board[i][0] == Cell.X ||

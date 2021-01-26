@@ -14,10 +14,12 @@ public class TicTacToeTest {
       String playerO = "Player O";
       String playerX = "Player X";
 
+      //instantiate
       TicTacToe game = new TicTacToe(playerO, playerX);
+
+      //main loop to determine the game status.
       while (game.getStatus() == TicTacToe.gameStatus.CONTINUE){
          int row, col;
-         TicTacToe.gameStatus determineStatus = game.getStatus();
          boolean done = false;
          do {
             game.printBoard();

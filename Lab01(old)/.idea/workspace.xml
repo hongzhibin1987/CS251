@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a090b260-f554-45f4-8da5-8851cbfc6b69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -88,6 +91,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611622201412">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1611622201412" />
+    <state width="2517" height="428" key="GridCell.Tab.0.bottom" timestamp="1611622556745">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="428" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1611622556745" />
+    <state width="2517" height="428" key="GridCell.Tab.0.center" timestamp="1611622556745">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="428" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1611622556745" />
+    <state width="2517" height="428" key="GridCell.Tab.0.left" timestamp="1611622556745">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="428" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1611622556745" />
+    <state width="2517" height="428" key="GridCell.Tab.0.right" timestamp="1611622556745">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="428" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1611622556745" />
     <state x="1029" y="347" key="new project wizard" timestamp="1610645693439">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
