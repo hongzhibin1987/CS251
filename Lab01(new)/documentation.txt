@@ -1,0 +1,25 @@
+<Zhibin “Bing” Hong>
+<zhong@cnm.edu>
+<Design documentation>
+<2/1/2020>
+
+Problem Description
+The goal of this program is to design a tictacto game allow two players to play with that. by using class tictactoe, each player takes turns to put one move on the board. program will make sure once reached a certain criteria, a message will pop out saying who won or draw. 
+
+Major Program Components (Classes, Objects, and Methods)
+Tictactoe // initiate board and player
+printBoard // print board
+getChar // turn enum into char
+getPlayer // get current player
+validMove // make sure the move is valid
+setMove // once move is valid, set the enum into the move enum
+gameStatus // make sure win/draw/continue
+printWinner // get the winner between O or X
+
+Tictactoetest // main test one. display message, and pass all methods in. 
+
+
+
+
+UML Diagram & Control Flow (Flow Chart)
+control flow and UNM diagrom attached in the flow chart. 

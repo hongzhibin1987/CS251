@@ -92,11 +92,12 @@ public class TicTacToe {
     public gameStatus getStatus() {
         for (int i = 0; i < 3; i++) {
             if (((board[i][0] == board[i][1] && board[i][1] == board[i][2]) && board[i][0] != Cell.EMPTY) ||
-                    (((board[0][i] == board[1][i] && board[1][i] == board[2][i]) && board[0][1] != Cell.EMPTY)  ||
-                            (((board[0][0] == board[1][1] && board[1][1] == board[2][2]) && board[0][0] != Cell.EMPTY)  ||
-                                    (((board[2][0] == board[1][1] && board[1][1] == board[0][2]) && board[2][0] != Cell.EMPTY) ))))
+                    (((board[0][i] == board[1][i] && board[1][i] == board[2][i]) && board[0][i] != Cell.EMPTY)))
                 return gameStatus.WIN;
         }
+        if (((board[0][0] == board[1][1] && board[1][1] == board[2][2]) && board[0][0] != Cell.EMPTY)  ||
+                (((board[2][0] == board[1][1] && board[1][1] == board[0][2]) && board[2][0] != Cell.EMPTY) ))
+            return gameStatus.WIN;
         if (moveCounter == 9)
             return gameStatus.DRAW;
         else
@@ -107,16 +108,18 @@ public class TicTacToe {
     public void printWinner() {
         for (int i = 0; i < 3; i++) {
             if (((board[i][0] == board[i][1] && board[i][1] == board[i][2]) && board[i][0] != Cell.EMPTY) & board[i][0] == Cell.X ||
-                    (((board[0][i] == board[1][i] && board[1][i] == board[2][i]) && board[0][1] != Cell.EMPTY) & board[0][i] == Cell.X ||
-                            (((board[0][0] == board[1][1] && board[1][1] == board[2][2]) && board[0][0] != Cell.EMPTY) & board[0][0] == Cell.X ||
-                                    (((board[2][0] == board[1][1] && board[1][1] == board[0][2]) && board[2][0] != Cell.EMPTY) & board[2][0] == Cell.X))))
+                    (((board[0][i] == board[1][i] && board[1][i] == board[2][i]) && board[0][1] != Cell.EMPTY) & board[0][i] == Cell.X ))
                 System.out.println("Player X win");
             else if (((board[i][0] == board[i][1] && board[i][1] == board[i][2]) && board[i][0] != Cell.EMPTY) & board[i][0] == Cell.O ||
-                    (((board[0][i] == board[1][i] && board[1][i] == board[2][i]) && board[0][1] != Cell.EMPTY) & board[0][i] == Cell.O ||
-                            (((board[0][0] == board[1][1] && board[1][1] == board[2][2]) && board[0][0] != Cell.EMPTY) & board[0][0] == Cell.O ||
-                                    (((board[2][0] == board[1][1] && board[1][1] == board[0][2]) && board[2][0] != Cell.EMPTY) & board[2][0] == Cell.O))))
+                    (((board[0][i] == board[1][i] && board[1][i] == board[2][i]) && board[0][1] != Cell.EMPTY) & board[0][i] == Cell.O ))
                 System.out.println("Player O win");
         }
+        if (((board[0][0] == board[1][1] && board[1][1] == board[2][2]) && board[0][0] != Cell.EMPTY) & board[0][0] == Cell.X ||
+                (((board[2][0] == board[1][1] && board[1][1] == board[0][2]) && board[2][0] != Cell.EMPTY) & board[2][0] == Cell.X))
+            System.out.println("Player X win");
+        if (((board[0][0] == board[1][1] && board[1][1] == board[2][2]) && board[0][0] != Cell.EMPTY) & board[0][0] == Cell.O ||
+                (((board[2][0] == board[1][1] && board[1][1] == board[0][2]) && board[2][0] != Cell.EMPTY) & board[2][0] == Cell.O))
+            System.out.println("Player O win");
     }
 }
 
