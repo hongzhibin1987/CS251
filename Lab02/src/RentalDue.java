@@ -43,7 +43,7 @@ public class RentalDue{
 
     public void PrintArray(){
         System.out.println();
-        System.out.println("Single-Family Rental Summary:");
+        System.out.println("Apartment Rental Summary:");
         System.out.println("Apartment ID No    Rental Due");
         System.out.println("===============    ==========");
         for (int i = 0; i < ApartmentArray.size(); i++){

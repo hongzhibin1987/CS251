@@ -1,7 +1,7 @@
 public class ApartmentRental extends RentalProperty {
 
     public ApartmentRental(String ID, String TypeofProperty, String PropertyID, int NumberofRoom, Double Rental) {
-        super(ID, TypeofProperty, PropertyID, NumberofRoom, Rental);
+        super (ID, TypeofProperty, PropertyID, NumberofRoom, Rental);
     }
 
     public double CalculateRentDue(){
@@ -22,6 +22,7 @@ public class ApartmentRental extends RentalProperty {
 }
 
 /*
+An alternative. longer.
 public class ApartmentRental extends RentalProperty {
 
     public ApartmentRental(String ID, String TypeofProperty, String PropertyID, int NumberofRoom, Double Rental) {

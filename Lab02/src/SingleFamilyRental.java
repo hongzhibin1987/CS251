@@ -7,13 +7,14 @@ public class SingleFamilyRental extends RentalProperty {
     public double CalculateRentDue(){
         double amount = 0;
         if (super.getTypeofProperty().equals("S")){
-            switch (super.getPropertyID()){
-                case "SABQ138":
-                    return (1400 * 0.04) + 1400;
-                case "SABQ127":
-                    return (900 * 0.04) + 900;
-                case "SABQ126":
-                    return (1200 * 0.04) + 1200;
+            if (super.getRental() == 900){
+                return 900 * 1.04;
+            }
+            else if (super.getRental() == 1200){
+                return 1200 * 1.04;
+            }
+            else if (super.getRental() == 1400){
+                return 1400 * 1.04;
             }
         }
         return amount;

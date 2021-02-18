@@ -30,7 +30,6 @@ public class RentalProperty implements Payment, Comparable<RentalProperty> {
 
     @Override
     public int compareTo(RentalProperty otherRental) {
-        //return otherRental.getPropertyID().compareTo(this.PropertyID);
         return this.PropertyID.compareTo(otherRental.getPropertyID());
     }
 }
