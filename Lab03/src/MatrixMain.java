@@ -28,19 +28,20 @@ public class MatrixMain {
         System.out.println(numberofCol);
 
         // Creating Array A and B with number of Col and number of row, also create an empty arraylist C
-        int [] [] A;
-        int [] [] B;
-        int [] [] C;
-        A = B = C =  new int [numberofRow] [numberofCol];
+        int[][] A;
+        int[][] B;
+        int[][] C;
+
+        A = B = C = new int[numberofRow][numberofCol];
 
         // Read matrix data into matrix A, B and C
-        for (int r = 0; r<numberofRow; r++){
-            for (int c = 0; c<numberofCol; c++){
+        for (int r = 0; r < numberofRow; r++) {
+            for (int c = 0; c < numberofCol; c++) {
                 A[r][c] = sc.nextInt();
             }
         }
 
-        // print out Matrix A
+        // System.out.pirint Matrix A;
         System.out.println("Matrix A");
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A[i].length; j++) {
@@ -48,7 +49,6 @@ public class MatrixMain {
             }
             System.out.println();
         }
-
         // calculate Matrix B
         for (int r = 0; r<numberofRow; r++){
             for (int c = 0; c<numberofCol; c++){
@@ -63,6 +63,7 @@ public class MatrixMain {
             }
             System.out.println();
         }
+
         System.out.println("Matrix A");
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A[i].length; j++) {
@@ -70,6 +71,55 @@ public class MatrixMain {
             }
             System.out.println();
         }
+
+
+
+
+
+
+
+
+
+
+
+        /*
+        try {
+            for (int r = 0; r < numberofRow; r++) {
+                for (int c = 0; c < numberofCol; c++ ){
+                    A[r][c] = sc.nextInt();
+                }
+            }
+            for (int r = 0; r < numberofRow; r++) {
+                for (int c = 0; c < numberofCol; c++) {
+                    B[r][c] = sc.nextInt();
+                }
+            }
+        }
+
+        catch (ArrayIndexOutOfBoundsException e) {}
+        //
+
+        }
+
+        System.out.println("Matrix B");
+        for (int i = 0; i < B.length; i++) {
+            for (int j = 0; j < B[i].length; j++) {
+                System.out.print(B[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
+
+/*
+
+
+
+
+
+
+
+
 
 
         // break arraylist into 4. a total of 4*3+3 = 15 arraylists.
@@ -94,4 +144,7 @@ public class MatrixMain {
         }
 
     }
-}
+
+         */
+        }
+    }
