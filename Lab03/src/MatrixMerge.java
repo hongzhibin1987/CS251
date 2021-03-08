@@ -49,9 +49,8 @@ public class MatrixMerge {
             }
         }
 
-        System.out.println("");
         System.out.println("Matrix A + Matrix B");
-        new MatrixPaint(C);
+        new MatrixPrint(C);
 
 
     }

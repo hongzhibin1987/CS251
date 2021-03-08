@@ -7,19 +7,16 @@ Lab03: ConcurrentProcessing
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class MatrixMain {
 
-    public static void main(String args[]) throws FileNotFoundException {
+    public static void main(String args[]) throws FileNotFoundException, InterruptedException {
 
         // read file
         File file = new File("src/matrix.txt");
-        Integer numberofRow = null;
-        Integer numberofCol = null;
+        Integer numberofRow;
+        Integer numberofCol;
         Scanner sc = new Scanner(file);
 
         // determine number of row and col
@@ -29,15 +26,14 @@ public class MatrixMain {
         System.out.println(numberofRow);
         System.out.println(numberofCol);
 
-        // Creating Array A and B with number of Col and number of row, also create an empty arraylist C
+        // Creating Array A and B with number of Col and number of row,
         int[][] A;
         int[][] B;
-        int[][] C;
 
         A = new int[numberofRow][numberofCol];
         B = new int[numberofRow][numberofCol];
-        C = new int[numberofRow][numberofCol];
-        // Read matrix data into matrix A, B and C
+
+        // Read matrix data into matrix A, and
         for (int r = 0; r < numberofRow; r++) {
             for (int c = 0; c < numberofCol; c++) {
                 A[r][c] = sc.nextInt();
@@ -46,12 +42,8 @@ public class MatrixMain {
 
         // System.out.print Matrix A;
         System.out.println("Matrix A");
-        for (int i = 0; i < A.length; i++) {
-            for (int j = 0; j < A[i].length; j++) {
-                System.out.print(A[i][j] + " ");
-            }
-            System.out.println();
-        }
+        new MatrixPrint(A);
+
         // calculate Matrix B
         for (int r = 0; r < numberofRow; r++) {
             for (int c = 0; c < numberofCol; c++) {
@@ -61,12 +53,7 @@ public class MatrixMain {
 
         // System.out.print Matrix B
         System.out.println("Matrix B");
-        for (int i = 0; i < B.length; i++) {
-            for (int j = 0; j < B[i].length; j++) {
-                System.out.print(B[i][j] + " ");
-            }
-            System.out.println();
-        }
+        new MatrixPrint(B);
 
         // initiate new # or col and row
         int Row00 = numberofRow / 2;
@@ -125,6 +112,11 @@ public class MatrixMain {
         AB01.start();
         AB10.start();
         AB11.start();
+
+        AB00.join();
+        AB01.join();
+        AB10.join();
+        AB11.join();
 
         C00=AB00.getResult();
         C01=AB01.getResult();

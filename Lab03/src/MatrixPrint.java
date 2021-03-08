@@ -1,6 +1,6 @@
 import java.lang.reflect.Array;
-public class MatrixPaint {
-    public MatrixPaint(int[][] array) {
+public class MatrixPrint {
+    public MatrixPrint(int[][] array) {
         for (int[] row : array) {
             for (int x : row)
                 System.out.print(x + " ");
