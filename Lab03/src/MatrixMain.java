@@ -125,7 +125,5 @@ public class MatrixMain {
 
         new MatrixMerge(C00, C01, C10, C11);
 
-
-
     }
 }
