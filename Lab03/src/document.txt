@@ -1,0 +1,21 @@
+Zhibin "Bing" Hong
+Zhong@cnm.edu
+Lab 3 – Concurrent Processing
+3/4/2021
+
+Problem Description：
+ Given two integer matrices A and B, you are requested to compose a program to perform matrix addition (A + B). Both matrices have N rows and M columns; N > 1, M > 1; You need to divide both (A and B) into four equal (or close to equal) size of submatrices (A0,0, A0,1, A1,0, A1,1 and B0,0, B0,1, B1.0, B1.1) and each submatrix has dimension close to (N/2) x (M/2). You need to create four Java threads. Each thread performs a subset of addition on one pair of the submatrices. For example, thread 0 performs addition on A0,0 and B0,0, thread 1 performs addition on A0,1 and B0,1, . . . etc. The final result should store in the matrix C of size N by M.
+Note: you need to manage the case of odd number of rows and/or odd number of column matrices. Try to divide them into “almost” equivalent submatrices.
+
+Major Program Components (Classes, Objects, and Methods)：
+MatrixMain: main body or file reading, parameter passing, etc;
+MatrixCalc (Class): calculate main body
+MatrixMarge (method): merge final new matrix
+MatrixPaint （class): paint different mathods
+
+
+UML Diagram：
+N/A
+
+
+Control Flow (Flow Chart)

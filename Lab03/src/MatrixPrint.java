@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+// print out matrix (mainly for de-bugging purpose)
 public class MatrixPrint {
     public MatrixPrint(int[][] array) {
         for (int[] row : array) {

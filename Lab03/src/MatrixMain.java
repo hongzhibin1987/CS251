@@ -30,6 +30,10 @@ public class MatrixMain {
         int[][] A;
         int[][] B;
 
+        if (numberofRow % 2 !=0){
+
+        }
+
         A = new int[numberofRow][numberofCol];
         B = new int[numberofRow][numberofCol];
 
@@ -55,36 +59,78 @@ public class MatrixMain {
         System.out.println("Matrix B");
         new MatrixPrint(B);
 
+        // determine whether the row and col is odd/even. if odd, add modifier.
+        int rowmod = 0; int colmod = 0;
+        if (numberofRow %2 !=0) {
+            rowmod =1;
+        }
+        if (numberofCol %2 !=0) {
+            colmod =1;
+        }
+
         // initiate new # or col and row
-        int Row00 = numberofRow / 2;
-        int Col00 = numberofCol / 2;
-        int Row01 = numberofRow - numberofRow / 2;
-        int Col01 = numberofCol - numberofCol / 2;
+        int newRow = numberofRow / 2 + rowmod;
+        int newCol = numberofCol / 2 + colmod;
+
+        System.out.print(newRow +"\n");
+        System.out.print(newCol +"\n");
+
 
         // break arraylist into 4. a total of 4*3+3 = 15 arraylists.
-        int[][] A00 = new int[Row00][Col00];
-        int[][] A01 = new int[Row00][Col01];
-        int[][] A10 = new int[Row01][Col00];
-        int[][] A11 = new int[Row01][Col01];
-        int[][] B00 = new int[Row00][Col00];
-        int[][] B01 = new int[Row00][Col01];
-        int[][] B10 = new int[Row01][Col00];
-        int[][] B11 = new int[Row01][Col01];
+        int[][] A00 = new int[newRow][newCol];
+        int[][] A01 = new int[newRow][newCol];
+        int[][] A10 = new int[newRow][newCol];
+        int[][] A11 = new int[newRow][newCol];
+        int[][] B00 = new int[newRow][newCol];
+        int[][] B01 = new int[newRow][newCol];
+        int[][] B10 = new int[newRow][newCol];
+        int[][] B11 = new int[newRow][newCol];
         int[][] C00;
         int[][] C01;
         int[][] C10;
         int[][] C11;
 
+        // get data into matrix
+        for (int r = 0; r < newRow; r++) {
+            for (int c = 0; c < newCol; c++){
+                A00[r][c] = A[r][c];
+                A01[r][c] = A[r][c+newCol-colmod];
+                new MatrixPrint(A01);
+                A10[r][c] = A[r+newRow-rowmod][c];
+                A11[r][c] = A[r+newRow-rowmod][c+newCol-colmod];
+
+                B00[r][c] = B[r][c];
+                B01[r][c] = B[r][c+newCol-colmod];
+                B10[r][c] = B[r+newRow-rowmod][c];
+                B11[r][c] = B[r+newRow-rowmod][c+newCol-colmod];
+            }
+        }
+
+
+
+/*
+        // this was part of the old code to determine the size of the matrix and etc;
+/*
+        if (numberofRow % 2 !=0)
+        for (int r = 0; r < Row00; r++) {
+            for (int c = 0; c < Col00 +1; c++){
+                A00[r][c] = A[r][c];
+                //new MatrixPrint(A00);
+                System.out.print((c+Col00) + "\n");
+                A01[r][c] = A[r][c+Col00];
+                new MatrixPrint(A01);
+            }
         for (int r = 0; r < Row00; r++) {
             for (int c = 0; c < Col00; c++) {
                 A00[r][c] = A[r][c];
-                A10[r][c] = A[r + Row00][c];
+                //new MatrixPrint(A00);
+                A10[r][c] = A[r - Row00][c];
+                new MatrixPrint(A10);
                 B00[r][c] = B[r][c];
                 B10[r][c] = B[r + Row00][c];
             }
         }
-
-        if (Row00 % 2 != 0 || Col00 % 2 != 0) {
+        if (Col00 % 2 != 0 || Col01 % 2 != 0) {
             for (int r = 0; r < Row01; r++) {
                 for (int c = 0; c < Col01; c++) {
                     A01[r][c] = A[r][c + Col01 - 1];
@@ -102,28 +148,34 @@ public class MatrixMain {
                     B11[r][c] = B[r + Row01][c + Col01];
                 }
             }
+ */
 
+        // calculate
         MatrixCalc AB00 = new MatrixCalc(A00, B00);
         MatrixCalc AB01 = new MatrixCalc(A01, B01);
         MatrixCalc AB10 = new MatrixCalc(A10, B10);
         MatrixCalc AB11 = new MatrixCalc(A11, B11);
 
+        // start process
         AB00.start();
         AB01.start();
         AB10.start();
         AB11.start();
 
+        // depends on the timing, join calculation
         AB00.join();
         AB01.join();
         AB10.join();
         AB11.join();
 
+        // get the final result
         C00=AB00.getResult();
         C01=AB01.getResult();
         C10=AB10.getResult();
         C11=AB11.getResult();
 
-        new MatrixMerge(C00, C01, C10, C11);
+        // final matrix merge.
+        new MatrixMerge(C00, C01, C10, C11, newRow, newCol, rowmod, colmod);
 
     }
 }
