@@ -107,7 +107,7 @@ public class FrameClient extends JFrame {
         btnClean.setBounds(10,240,100,20);
         clientPanel.add(btnClean);
 
-        JTextArea displayArea = new JTextArea("");
+        displayArea = new JTextArea();
         displayArea.setBounds(10,270,240,240);
         clientPanel.add(displayArea);
 
@@ -158,7 +158,8 @@ public class FrameClient extends JFrame {
                         while (s.hasNext()){
                             C.add(s.nextLine());
                         }
-                        displayArea.append("\n ...Import Complete");
+                        displayArea.append("Click Calculate to get the result. \n");
+
                     }
                     else {
                         displayArea.append("File does not exist, please try again");
@@ -217,13 +218,13 @@ public class FrameClient extends JFrame {
                 String result = "";
                 // pass content from buffered Reader to display Area.
                 ArrayList <String> list = new ArrayList<String>();
+
                 while ((result = br.readLine()) != null) {
                     //System.out.println(result);
                     list.add(result);
-                    displayArea.append("I die");
+                    displayArea.append(result + "\n");
                 }
-
-                System.out.print(list);
+                //displayArea.append(String.valueOf(list));
 
             } catch (Exception e) {
                 e.printStackTrace();
