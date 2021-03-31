@@ -181,7 +181,7 @@ public class FrameClient extends JFrame {
                 }
                 String a = sb.toString();
                 thd.send(a);
-                System.out.println(a);
+                //System.out.println(a);
             }
         });
 
@@ -211,20 +211,25 @@ public class FrameClient extends JFrame {
         public void run() {
             try {
                 br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
-                // send content from client
-                pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(),"UTF-8")));
+                pw = new PrintWriter(
+                        new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8")));
                 // receive content from server
                 String result = "";
                 // pass content from buffered Reader to display Area.
-
+                ArrayList <String> list = new ArrayList<String>();
                 while ((result = br.readLine()) != null) {
-                    displayArea.setText(result);
+                    //System.out.println(result);
+                    list.add(result);
+                    displayArea.append("I die");
                 }
 
+                System.out.print(list);
 
             } catch (Exception e) {
                 e.printStackTrace();
-            } finally {
+            }
+
+            finally {
                 // TODO: handle finally clause
                 try {
                     if (br != null)
@@ -237,6 +242,8 @@ public class FrameClient extends JFrame {
                     // TODO: handle exception;
                 }
             }
+
+
         }
         // send raw data
         public void send (String C){
