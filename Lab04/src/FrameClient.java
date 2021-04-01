@@ -1,15 +1,14 @@
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.*;
 import java.awt.event.*;
 import java.io.*;
 import java.net.*;
-import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FrameClient extends JFrame {
 
+    // define basic GUI components
     private JPanel clientPanel;
     private JTextField portInput;
     private JTextField ipInput;
@@ -23,6 +22,7 @@ public class FrameClient extends JFrame {
     BufferedReader br = null;
     PrintWriter pw = null;
 
+    // complete swing processing done in EDT, block GUI if the computation is long.
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -36,6 +36,7 @@ public class FrameClient extends JFrame {
         });
     }
 
+    // prepare the GUI elements within the frame.
     public FrameClient(){
         setTitle("Matrix Calculation (Client)");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,7 +100,7 @@ public class FrameClient extends JFrame {
         btnCalculate.setBounds(150,210,100,20);
         clientPanel.add(btnCalculate);
 
-        JButton btnClose = new JButton("Quit");
+        JButton btnClose = new JButton("Exit");
         btnClose.setBounds(150,240,100,20);
         clientPanel.add(btnClose);
 
@@ -199,6 +200,7 @@ public class FrameClient extends JFrame {
         });
     }
 
+    // client-server communication core. use br to read the communication and pw to write the communication
     class SocketThd extends Thread {
         Socket socket;
         BufferedReader br = null;

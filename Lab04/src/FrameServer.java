@@ -3,9 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import java.io.*;
-import java.math.BigDecimal;
 import java.net.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class FrameServer extends JFrame {
@@ -14,11 +12,6 @@ public class FrameServer extends JFrame {
     private JTextField portInput;
     private JTextArea textArea;
     ServerSocket server = null;
-
-    FrameClient.SocketThd thd = null;
-    Socket socket = null;
-    BufferedReader br = null;
-    PrintWriter pw = null;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -105,7 +98,7 @@ public class FrameServer extends JFrame {
             }
         });
 
-        //send information back
+
         btnClean.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 textArea.setText("");
@@ -151,53 +144,34 @@ public class FrameServer extends JFrame {
                 pw = new PrintWriter(
                         new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8")));
 
+                // read the long string of S from client end
                 String S = br.readLine();
-                //System.out.println(S);
 
-                String Matrix[] = S.split(" ");
+                // following is basic convert from string to int-arraylist.
+                String[] Matrix = S.split(" ");
                 String Row = Matrix[0];
                 String Col = Matrix[1];
                 String[]  justMatrix = Arrays.copyOfRange(Matrix, 2, Matrix.length);
 
-                Integer ServerRow = Integer.valueOf(Row);
-                Integer ServerCol = Integer.valueOf(Col);
-
-                //System.out.println(ServerRow);
-                //System.out.println(ServerCol);
-                //textArea.append("\nRow of the matrix is "+ ServerRow + "\nCol of the matrix is " + ServerCol + "\n" + "This is the Matrix on Server: \n" );
-
+                int ServerRow = Integer.parseInt(Row);
+                int ServerCol = Integer.parseInt(Col);
                 int size = justMatrix.length;
                 int[] intjustMatrix = new int[size];
+
                 for (int i=0; i<size; i++){
                     intjustMatrix[i] = Integer.parseInt(justMatrix[i]);
                 }
-                //System.out.println(Arrays.toString(intjustMatrix));
-                int[] idkMatrix = Arrays.copyOfRange(intjustMatrix, 0, intjustMatrix.length);
 
-                int ServerMatrix[][] = new int[ServerRow*2][ServerCol];
+                int[] idkMatrix = Arrays.copyOfRange(intjustMatrix, 0, intjustMatrix.length);
+                int[][] ServerMatrix = new int[ServerRow*2][ServerCol];
 
                 for (int i= 0; i<ServerRow*2;i++){
                     for (int j = 0; j<ServerCol; j++){
                         ServerMatrix[i][j] = idkMatrix[j%(ServerRow*2) + i*ServerCol];
                     }
                 }
-                /*
-                System.out.println("\nThis is the Matrix on server:");
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i< ServerRow*2; i++){
-                    for (int j = 0; j<ServerCol; j++){
-                        System.out.print(ServerMatrix[i][j]+" ");
-                        sb.append(String.valueOf(ServerMatrix[i][j]));
-                        sb.append(" ");
-                      }
-                    sb.append("\n");
-                    System.out.println();
-                }
-                textArea.append(sb.toString());
 
- */
-                // from here after reuse some of the lab3 codes.
-                // instead of direct create 2 matrix, split the ServerMatrix into two parts.
+                // split the origin 2d arraylist into 2. code is bit different than the origin lab3 one.
                 int arrayLength = ServerMatrix.length;
                 int halfWayPoint = (int) Math.floor(arrayLength/2);
                 int numberofelementsInArray = ServerMatrix[0].length;
@@ -257,7 +231,7 @@ public class FrameServer extends JFrame {
                 int[][] C10;
                 int[][] C11;
 
-
+                // old class import
                 class MatrixPrint {
                     public MatrixPrint(int[][] array) {
                         for (int[] row : array) {
@@ -285,6 +259,7 @@ public class FrameServer extends JFrame {
                     }
                 }
 
+                // Matrix calculation
                 class MatrixCalc extends Thread {
                     private int[][] A;
                     private int[][] B;
@@ -308,6 +283,7 @@ public class FrameServer extends JFrame {
                     }
                 }
 
+                // Matrix merge.
                 class MatrixMerge {
                     public MatrixMerge(int[][]C00, int[][]C01, int[][]C10, int[][]C11, int newRow, int newCol, int rowmod, int colmod){
                         int m = C00.length;
@@ -405,7 +381,6 @@ public class FrameServer extends JFrame {
 
                 // final matrix merge.
                 new MatrixMerge(C00, C01, C10, C11, newRow, newCol, rowmod, colmod);
-
 
             } catch (Exception e) {
                 e.printStackTrace();
