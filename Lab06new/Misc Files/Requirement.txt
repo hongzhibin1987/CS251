@@ -1,0 +1,15 @@
+Complete Exercise 24.4 with the following specifications / adjustments:
+In Section 10.5, we introduced an employee-payroll hierarchy to calculate each employee's payroll.
+In this exercise, we provide a database of employees that corresponds to the employee-payroll hierarchy.
+A SQL script to create the *employees* database is provided with the examples for the chapter.
+
+a) Add employees to the employee table.
+b) Add payroll information to the appropriate table for each new employee.
+For example, for a salaried employee add the payroll information to the *salariedEmployees* table.
+c) Complete the assignment using only a command prompt interface. No GUI (yet).
+d) Write a while or do-while loop in main that repeatedly asks the user if they would like to enter another employee.
+e) hen the user says "yes", a new method named addEmployee should be called.
+f) This method prompts the user for the employee's first and last name, social security number, and birthday.
+g) Validate the formatting of the SSN and the birthday and make the user re-enter this information if they mess up.
+h) Randomly generate the employeeType data for the new employee as either: salariedEmployee or commissionEmployee
+i) Randomly generate the departmentName data for the new employee from among: Sales, R&D, or HR
