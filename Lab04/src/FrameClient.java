@@ -153,7 +153,7 @@ public class FrameClient extends JFrame {
                     fileNotFoundException.printStackTrace();
                 }
                 try {
-                    displayArea.read(reader,filename);
+                    pathInput.read(reader,filename);
                     if (filename.equals("Matrix.txt")){
                         Scanner s = new Scanner(displayArea.getText());
                         while (s.hasNext()){
