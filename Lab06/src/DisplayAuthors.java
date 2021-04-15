@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class DisplayAuthors {
    public static void main(String args[]) {
-      final String DATABASE_URL = "jdbc:derby:C:\\Users\\hongz\\OneDrive\\MISC DOCUMENTATION\\Desktop Java\\Lab06\\lib\\books";
+      final String DATABASE_URL = "jdbc:derby:C:\\Users\\hongz\\OneDrive\\MISC DOCUMENTATION\\Desktop Java\\Lab06new\\lib\\DB\\EmployeeDB";
       final String SELECT_QUERY =                            
          "SELECT authorID, firstName, lastName FROM authors";
 

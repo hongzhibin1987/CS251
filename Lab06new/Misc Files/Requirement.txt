@@ -4,8 +4,7 @@ In this exercise, we provide a database of employees that corresponds to the emp
 A SQL script to create the *employees* database is provided with the examples for the chapter.
 
 a) Add employees to the employee table.
-b) Add payroll information to the appropriate table for each new employee.
-For example, for a salaried employee add the payroll information to the *salariedEmployees* table.
+b) Add payroll information to the appropriate table for each new employee.For example, for a salaried employee add the payroll information to the *salariedEmployees* table.
 c) Complete the assignment using only a command prompt interface. No GUI (yet).
 d) Write a while or do-while loop in main that repeatedly asks the user if they would like to enter another employee.
 e) hen the user says "yes", a new method named addEmployee should be called.
