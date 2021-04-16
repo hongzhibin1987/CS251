@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="false" />
+    <value-preview-text-wrapping value="true" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -26,36 +26,8 @@
     <show-object-properties value="true" />
     <loaded-nodes />
   </component>
-  <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="3cdb3d68-c836-4f66-b900-aa1ca7bd419b">
-      <console name="Connection" type="STANDARD" schema="APP" session="Main"><![CDATA[select
-EMPLOYEES.firstname, EMPLOYEES.lastname, EMPLOYEES.birthday, EMPLOYEES.DEPARTMENTNAME, EMPLOYEES.EMPLOYEETYPE, EMPLOYEES.SOCIALSECURITYNUMBER, BASEPLUSCOMMISSIONEMPLOYEES.BASESALARY, BASEPLUSCOMMISSIONEMPLOYEES.BONUS, BASEPLUSCOMMISSIONEMPLOYEES.COMMISSIONRATE, BASEPLUSCOMMISSIONEMPLOYEES.GROSSSALES, COMMISSIONEMPLOYEES.BONUS,  COMMISSIONEMPLOYEES.COMMISSIONRATE, COMMISSIONEMPLOYEES.GROSSSALES, HOURLYEMPLOYEES.BONUS, HOURLYEMPLOYEES.HOURS, HOURLYEMPLOYEES.WAGE, SALARIEDEMPLOYEES.BONUS, SALARIEDEMPLOYEES.WEEKLYSALARY from EMPLOYEES
-LEFT JOIN BASEPLUSCOMMISSIONEMPLOYEES on EMPLOYEES.socialSecurityNumber = BASEPLUSCOMMISSIONEMPLOYEES.SOCIALSECURITYNUMBER
-LEFT JOIN COMMISSIONEMPLOYEES on EMPLOYEES.socialsecurityNumber = COMMISSIONEMPLOYEES.SOCIALSECURITYNUMBER
-LEFT JOIN HOURLYEMPLOYEES on EMPLOYEES.socialsecurityNumber = HOURLYEMPLOYEES.SOCIALSECURITYNUMBER
-LEFT JOIN SALARIEDEMPLOYEES on EMPLOYEES.socialsecurityNumber = SALARIEDEMPLOYEES.SOCIALSECURITYNUMBER
-ORDER BY EMPLOYEES.SOCIALSECURITYNUMBER
-
-DELETE FROM BASEPLUSCOMMISSIONEMPLOYEES WHERE SOCIALSECURITYNUMBER = ?
-DELETE FROM COMMISSIONEMPLOYEES WHERE SOCIALSECURITYNUMBER = ?
-DELETE FROM HOURLYEMPLOYEES WHERE SOCIALSECURITYNUMBER = ?
-DELETE FROM SALARIEDEMPLOYEES WHERE SOCIALSECURITYNUMBER = ?
-DELETE FROM EMPLOYEES WHERE SOCIALSECURITYNUMBER = ?
-
-DELETE FROM BASEPLUSCOMMISSIONEMPLOYEES
-WHERE EXISTS
-(SELECT * FROM )]]></console>
-    </connection>
-  </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
-  </component>
-  <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="3cdb3d68-c836-4f66-b900-aa1ca7bd419b" />
-  </component>
-  <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="3cdb3d68-c836-4f66-b900-aa1ca7bd419b" dataset="APP.COMMISSIONEMPLOYEES" active-filter-id="" />
-    <filter-actions connection-id="3cdb3d68-c836-4f66-b900-aa1ca7bd419b" dataset="APP.BASEPLUSCOMMISSIONEMPLOYEES" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -79,94 +51,10 @@ WHERE EXISTS
     <filters />
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
-    <recently-used-interfaces>
-      <mapping database-type="GENERIC" interface-id="DEFAULT" />
-    </recently-used-interfaces>
+    <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
-    <connections>
-      <connection id="3cdb3d68-c836-4f66-b900-aa1ca7bd419b" active="true">
-        <database>
-          <name value="EmployeeDB" />
-          <description value="EmployeeDB" />
-          <database-type value="GENERIC" />
-          <config-type value="CUSTOM" />
-          <database-version value="10.14" />
-          <driver-source value="EXTERNAL" />
-          <driver-library value="C:\Users\hongz\OneDrive\MISC DOCUMENTATION\Desktop Java\db-derby-10.14.2.0-bin\lib\derbyclient.jar" />
-          <driver value="org.apache.derby.jdbc.ClientDriver" />
-          <url value="jdbc:derby://localhost:1527/test" />
-          <type value="NONE" />
-          <user value="" />
-          <deprecated-pwd value="" />
-        </database>
-        <properties>
-          <auto-commit value="false" />
-        </properties>
-        <ssh-settings>
-          <active value="false" />
-          <proxy-host value="" />
-          <proxy-port value="22" />
-          <proxy-user value="" />
-          <deprecated-proxy-pwd value="" />
-          <auth-type value="PASSWORD" />
-          <key-file value="" />
-          <key-passphrase value="" />
-        </ssh-settings>
-        <ssl-settings>
-          <active value="false" />
-          <certificate-authority-file value="" />
-          <client-certificate-file value="" />
-          <client-key-file value="" />
-        </ssl-settings>
-        <details>
-          <charset value="UTF-8" />
-          <session-management value="true" />
-          <ddl-file-binding value="true" />
-          <database-logging value="false" />
-          <connect-automatically value="true" />
-          <restore-workspace value="true" />
-          <restore-workspace-deep value="true" />
-          <environment-type value="default" />
-          <connectivity-timeout value="5" />
-          <idle-time-to-disconnect value="30" />
-          <idle-time-to-disconnect-pool value="5" />
-          <credential-expiry-time value="10" />
-          <max-connection-pool-size value="7" />
-          <alternative-statement-delimiter value="" />
-        </details>
-        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
-          <object-type-filter use-master-settings="true">
-            <object-type name="SCHEMA" enabled="true" />
-            <object-type name="USER" enabled="true" />
-            <object-type name="ROLE" enabled="true" />
-            <object-type name="PRIVILEGE" enabled="true" />
-            <object-type name="CHARSET" enabled="true" />
-            <object-type name="TABLE" enabled="true" />
-            <object-type name="VIEW" enabled="true" />
-            <object-type name="MATERIALIZED_VIEW" enabled="true" />
-            <object-type name="NESTED_TABLE" enabled="true" />
-            <object-type name="COLUMN" enabled="true" />
-            <object-type name="INDEX" enabled="true" />
-            <object-type name="CONSTRAINT" enabled="true" />
-            <object-type name="DATASET_TRIGGER" enabled="true" />
-            <object-type name="DATABASE_TRIGGER" enabled="true" />
-            <object-type name="SYNONYM" enabled="true" />
-            <object-type name="SEQUENCE" enabled="true" />
-            <object-type name="PROCEDURE" enabled="true" />
-            <object-type name="FUNCTION" enabled="true" />
-            <object-type name="PACKAGE" enabled="true" />
-            <object-type name="TYPE" enabled="true" />
-            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
-            <object-type name="ARGUMENT" enabled="true" />
-            <object-type name="DIMENSION" enabled="true" />
-            <object-type name="CLUSTER" enabled="true" />
-            <object-type name="DBLINK" enabled="true" />
-          </object-type-filter>
-          <object-name-filters />
-        </object-filters>
-      </connection>
-    </connections>
+    <connections />
     <browser-settings>
       <general>
         <display-mode value="TABBED" />
