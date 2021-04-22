@@ -518,10 +518,8 @@ public class EmployeeDB {
 
         database_GUI database_gui = new database_GUI();
         database_gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        database_gui.setSize(480,680);
+        database_gui.setSize(480,560);
         database_gui.setVisible(true);
-
-
 
         // this is for the better GUI with more functions.
         //DBTester dbtester = new DBTester();
