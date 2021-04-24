@@ -273,6 +273,9 @@ public class database_GUI extends JFrame{
                 for (int i = 1; i <= numberOfColumns; i++) {
                     //System.out.printf("%-8s\t", metaData.getColumnName(i));
                     to_display += metaData.getColumnName(i)+"\t";
+                    if(i==5) {
+                        to_display += "\t";
+                    }
 
                 }
                 //System.out.println();
@@ -283,6 +286,13 @@ public class database_GUI extends JFrame{
                     for (int i = 1; i <= numberOfColumns; i++) {
                         //System.out.printf("%-8s\t", resultSet.getObject(i));
                         to_display += resultSet.getObject(i)+"\t";
+                        if(i==4 || i==6) {
+                            to_display += "\t";
+                        }
+                        if(i==5 && !resultSet.getObject(i).toString().equals("basePlusCommissionEmployee")) {
+                            to_display += "\t";
+                        }
+
                     }
                     //System.out.println();
                     to_display += "\n";
@@ -309,6 +319,9 @@ public class database_GUI extends JFrame{
                 for (int i = 1; i <= numberOfColumns; i++) {
                     //System.out.printf("%-8s\t", metaData.getColumnName(i));
                     to_display += metaData.getColumnName(i)+"\t";
+                    if(i==5) {
+                        to_display += "\t";
+                    }
 
                 }
                 //System.out.println();
@@ -319,6 +332,12 @@ public class database_GUI extends JFrame{
                     for (int i = 1; i <= numberOfColumns; i++) {
                         //System.out.printf("%-8s\t", resultSet.getObject(i));
                         to_display += resultSet.getObject(i)+"\t";
+                        if(i==4 || i==6) {
+                            to_display += "\t";
+                        }
+                        if(i==5 && !resultSet.getObject(i).toString().equals("basePlusCommissionEmployee")) {
+                            to_display += "\t";
+                        }
                     }
                     //System.out.println();
                     to_display += "\n";
@@ -345,6 +364,9 @@ public class database_GUI extends JFrame{
                 for (int i = 1; i <= numberOfColumns; i++) {
                     //System.out.printf("%-8s\t", metaData.getColumnName(i));
                     to_display += metaData.getColumnName(i)+"\t";
+                    if(i==5) {
+                        to_display += "\t";
+                    }
 
                 }
                 //System.out.println();
@@ -355,6 +377,12 @@ public class database_GUI extends JFrame{
                     for (int i = 1; i <= numberOfColumns; i++) {
                         //System.out.printf("%-8s\t", resultSet.getObject(i));
                         to_display += resultSet.getObject(i)+"\t";
+                        if(i==4 || i==6) {
+                            to_display += "\t";
+                        }
+                        if(i==5 && !resultSet.getObject(i).toString().equals("basePlusCommissionEmployee")) {
+                            to_display += "\t";
+                        }
                     }
                     //System.out.println();
                     to_display += "\n";
@@ -366,6 +394,7 @@ public class database_GUI extends JFrame{
                 sqlException.printStackTrace();
             }
         }
+
 
         public void sqlButton4()
         {

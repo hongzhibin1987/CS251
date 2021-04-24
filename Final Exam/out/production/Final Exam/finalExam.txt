@@ -1,0 +1,157 @@
+/*
+Zhibin "Bing" Hong
+CS2551
+Final Exam
+*/
+==============================================
+
+QUESTION 1
+Given the Tile class and Main in the folder scrabble_array_list, modify the Tile class so that it implements comparable.
+
+Tiles should be compared alphabetically based on their letter such that a comes before b comes before c and so on.
+
+The given code should run without errors and print the tiles first out of order and then in order.
+
+You should look up the comparable interface if you need to, but all code should be your own.
+
+WRITE YOUR ANSWER IN THE scrabble_array_list FOLDER.
+
+==============================================
+
+QUESTION 2
+Given the code in the folder interface_question, create a class named Box that implements the interface Holder.
+
+The code in Main should run correctly, including a catch of an exception at the end when you are finished.
+
+Throw an exception if someone tries to remove an object that is not in the Holder.
+
+You MAY implement your Box using an ArrayList, but if you use an array instead and write code to dynamically grow the size of the array as more items are added you can earn up to 10 points of extra credit.
+
+WRITE YOUR ANSWER IN THE interface_question FOLDER.
+
+==============================================
+
+QUESTION 3
+
+The following method takes a generic Object as input. Write code that uses instanceof to check if the Object is a String and if the input is a String, print it out.
+
+public static void whatsTheInput(Object mystery){
+    if (mystery instanceof String) {
+		System.out.println("Object is String.");
+	} else if (mystery instanceof Integer) {
+		System.out.println("Object is Integer.");
+	} else {
+		System.out.println("Object is not a string nor an integer.");
+	}
+}
+
+==============================================
+
+For all of the following written response questions, write your own answer. You may not copy from any source though you can use any source for research as long as you do not ask another person other than the instructor.
+
+It is wise to cite any sources you use.
+
+==============================================
+
+QUESTION 4
+
+Suppose Writer is an object that writes data to a shared buffer named Buffer and Reader reads from Buffer. Both Writer and Reader extend Thread and operate concurrently.
+
+Part A: Describe how notifyAll can be useful for Writer to avoid writing when Buffer is full.
+
+WRITE YOUR ANSWER HERE: notifyAll() and notify() are both used in sending notification to thread(s).
+the biggest difference between the two is: notify() can only notify one thread, and notifyAll() can notify all threads.
+that being said, when the buffer is full, using notifyAll() will notify both reader and writer; the writer will try to read once,
+and then the reader will start reading.
+
+Part B: Describe how notifyAll can be useful for Reader to avoid reading when Buffer is empty.
+
+WRITE YOUR ANSWER HERE: similar to previous question, notifyAll() will notify both reader and writer so this can significatly reduce
+the wait time.
+
+Part C: Describe how notifyAll can improve the general efficiency of this producer-consumer relationship.
+
+WRITE YOUR ANSWER HERE: notifyAll will send notification to all threads, so if there is any thread misses the notification, the other thread will
+do the work. thus will reduce the chance of non-responding, hard-to-debug issues.
+
+reference: https://www.tutorialspoint.com/java/lang/object_notifyall.htm
+==============================================
+
+QUESTION 5
+What is the primary difference between the Transmission Control Protocol (TCP) and the User Datagram Protocol (UDP)?
+
+WRITE YOUR ANSWER HERE: the major difference between TCD and UDP is: TCP's data transmission will use the form of packets so will
+do error checking and make sure the delivery is made, and also the data will be transmitted in order.
+UDP is similar to TCP except won't guarantee the error checking and data recovery. the data will be sent continuously, irrespective of the issues in the receiving end.
+
+Give examples of applications that are suited to each.
+
+WRITE YOUR ANSWER HERE: TCP: SMS; UDP: radio.
+
+Reference: https://www.tutorialspoint.com/difference-between-tcp-and-udp#:~:text=As%20we%20know%20that%20both,a%20simpler%2C%20connectionless%20Internet%20protocol.
+==============================================
+
+QUESTION 6
+The following code is part of a larger program implementing a Graphical User Interface (GUI). The snippet shown attaches an ActionListener to a button. What effect does attaching an ActionListener have in general and why is it important?
+      ...
+      // create new ButtonHandler for button event handling
+      ButtonHandler handler = new ButtonHandler();
+      plainJButton.addActionListener(handler);
+   }
+
+   // inner class for button event handling
+   private class ButtonHandler implements ActionListener
+   {
+      // handle button event
+      @Override
+      public void actionPerformed(ActionEvent event)
+      {
+         JOptionPane.showMessageDialog(ButtonFrame.this, String.format(
+            "You pressed: %s", event.getActionCommand()));
+      }
+   }
+   ...
+
+WRITE YOUR ANSWER HERE: ActionListener in Java is a class that is responsible for handling all action events like user clicking on a GUI component.
+an ActionListener can be used by the implements keyword to the class definition, or can be used seperately from the class by creating a new class.
+
+reference: https://javapointers.com/java/java-se/actionlistener/#:~:text=ActionListener%20in%20Java%20is%20a,user%20clicks%20on%20a%20component.&text=An%20ActionListener%20can%20be%20used,new%20class%20that%20implements%20it.
+
+
+==============================================
+
+QUESTION 7
+What does the setEditable method do?
+
+    textField1.setEditable(false);
+    textField2.setEditable(true);
+
+Give an example of an application in which you want a textfield to have editable set to true and an example of when you would NOT want a textfield to have editable set to true.
+
+WRITE YOUR ANSWER HERE: 1) the textField.setEditable(true) the user can edit/type things. the false on only does not allow user to input.
+example will be lab6-2. top is uneditable so can be used as something similar to textArea, displaying. (however uaully one-liner).
+true is like regular textbox can take userInput.
+
+Reference: N/A
+
+==============================================
+
+QUESTION 8
+Will a computer with only one single core processor ever benefit from multi-threading? Why or why not?
+
+WRITE YOUR ANSWER HERE： can do, and it would be easier to do. the kernel wil use interruption or other similar mechanism to suspend,
+saving machine state, and replacing the previously-saved state or restart another.
+the biggest benefit would be compatibility. even can do solo-thread, a single core with a kernal can support multithreading will eventually
+make the assignment more doable. Even this case is relatively rare nowadays, however one negative example would be early-ear MacOS which didnt
+support multi-threading on single core---ended up with multitasking almost impossible.
+So the biggest benefit would be: make multitask possible.
+
+==============================================
+
+QUESTION 9
+What is the purpose of primary keys and foreign keys in a relational database?
+
+WRITE YOUR ANSWER HERE: the primary key is used as the one and only one indicator in the relational datable to connect other table(s)
+with the main table. it makes specidfic column unique. a foreign key is one or multiple groups of columns in a relations databsse that
+provide links between data between two tables.
+

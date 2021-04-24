@@ -5,11 +5,11 @@ public class Main
 	{
 		Box b = new Box();
 		b.add("hello");
-		b.add("goodbye");
+		b.add("goodbye");;
 		
 		try{
 			System.out.println(" should be true: "+b.contains("hello"));
-			
+
 			b.remove("hello");
 			
 			System.out.println(" should be false: "+b.contains("hello"));
